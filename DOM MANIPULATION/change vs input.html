@@ -1,0 +1,21 @@
+<input type="text" id="input" />
+<script>
+  const input = document.getElementById("input");
+
+  input.addEventListener("input", function() {
+    console.log("Input value changed to:", input.value);
+  });
+</script>
+
+<input type="text" id="inputField" />
+<script>
+  const inputField = document.getElementById("inputField");
+
+  inputField.addEventListener("change", function() {
+    console.log("Change event triggered, final value:", inputField.value);
+    const add=document.createElement("p");
+    inputField.appendChild(add);
+
+  });
+</script>
+

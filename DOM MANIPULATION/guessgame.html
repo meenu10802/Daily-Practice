@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="field">Guess the number</label><p></p>
+    <input id="field" type="text" placeholder="enter a number">
+    <button id="a" type="submit"> Submit</button>
+    <p id="guess"></p>
+    <p id="alert"></p>
+    <p id="too"></p>
+    <script>
+        let count=1;
+        let randome= Math.floor(Math.random() * 100) + 1;
+
+        const guessField =document.querySelector("#field");
+        const button=document.querySelector("#a");
+        const numOfGuess=document.querySelector("#guess");
+        const notific=document.querySelector("#alert");
+        const range= document.querySelector("#too");
+
+        button.addEventListener("click",function(){
+            const guess= Number (guessField.value);
+            if(guess===randome){
+                count++
+                numOfGuess.textContent=(`${count} number of times`);
+                notific.textContent=("Sucess!");
+            }
+            else if(guess<randome){
+                
+                numOfGuess.textContent=(`${count} number of times`);
+                notific.textContent=("Wrong!");
+                range.textContent=("Too low");
+                count++
+            }
+            else{
+                count++;
+                numOfGuess.textContent=(`${count} number of times`);
+                notific.textContent=("Wrong!");
+                range.textContent=("Too high");
+            }
+        })
+    </script>
+</body>
+</html>
